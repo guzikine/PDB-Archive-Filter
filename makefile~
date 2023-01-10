@@ -1,0 +1,25 @@
+# This is a GNU-make file made for
+# automatic testing to validate the
+# pdb_file_statistics script.
+
+.PHONY: all test
+
+all: 
+
+TEST_DIR = tests/
+
+TEST_CASE_DIR = ${TEST_DIR}/cases
+TEST_DIFF_DIR = ${TEST_DIR}/outputs
+TEST_OUTP_DIR = ${TEST_DIR}/outputs
+
+TEST_CASE_PDB_INPUTS = $(wildcard ${TEST_CASE_DIR}/*.pdb)
+TEST_CASE_CIF_INPUTS = $(wildcard ${TEST_CASE_DIR}/*.cif)
+TEST_CASE_DIR_INPUTS = $(wildcard ${TEST_CASE_DIR}/*.dir)
+
+TEST_CIF_OUTPS = $(TEST_CASE_CIF_INPUTS:${TEST_CASE_DIR}/%.cif=$(TEST_OUTP_DIR)/%.out)
+TEST_PDB_OUTPS = $(TEST_CASE_PDB_INPUTS:${TEST_CASE_DIR}/%.pdb=$(TEST_OUTP_DIR)/%.out)
+TEST_DIR_OUTPS = $(TEST_CASE_DIR_INPUTS:${TEST_CASE_DIR}/%.dir=$(TEST_OUTP_DIR)/%.out)
+
+diff_generation:
+	$()
+

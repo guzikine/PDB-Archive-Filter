@@ -1,0 +1,2 @@
+testsoutputs/pdb_archive_filter_001p.pdbdiff: ./testsoutputs/pdb.pl
+testsoutputs/pdb_archive_filter_002p.pdbdiff: ./testsoutputs/pdb.pl
